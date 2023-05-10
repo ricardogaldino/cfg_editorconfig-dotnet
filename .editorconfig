@@ -1,0 +1,73 @@
+## ****************************************************************************************************
+## DOTNET FORMAT (CODE STYLE)
+## https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/csharp-formatting-options
+## ****************************************************************************************************
+
+root = true
+
+[*]
+indent_style = space
+
+[*.cs]
+charset = utf-8-bom
+indent_size = 4
+insert_final_newline = true
+trim_trailing_whitespace = true
+dotnet_diagnostic.CS0109.parameters = 3
+csharp_indent_case_contents = true
+csharp_indent_case_contents_when_block = true
+csharp_indent_switch_labels = true
+csharp_indent_block_contents = true
+csharp_indent_braces = false
+csharp_new_line_before_dot = true
+csharp_new_line_before_comma = true
+csharp_new_line_before_else  = true
+csharp_new_line_before_catch = true
+csharp_new_line_before_finally = true
+csharp_new_line_before_open_brace = all
+csharp_wrapping_keep_simple_method_on_single_line = false
+csharp_new_line_before_open_parenthesis_in_method_declaration = true
+csharp_style_var_elsewhere = true:true
+csharp_style_var_for_built_in_types = true:true
+csharp_style_var_when_type_is_apparent = true:true
+dotnet_style_qualification_for_field = true:true
+dotnet_style_qualification_for_property = true:true
+dotnet_style_qualification_for_method = true:true
+dotnet_code_quality.remove_unnecessary_import_directives = true:true
+
+## ****************************************************************************************************
+## SONAR (CODE ANALYZER)
+## https://sonarsource.github.io/rspec/#/rspec/?lang=csharp
+## ****************************************************************************************************
+
+# S1481: Remove the unused local variable
+dotnet_diagnostic.S1481.severity = error
+
+# S3903: Not found a namespace
+dotnet_diagnostic.S3903.severity = error
+
+# S4144: Methods should not have identical implementations
+dotnet_diagnostic.S4144.severity = error
+
+# S4487: Unread private fields should be removed
+dotnet_diagnostic.S4487.severity = error
+
+## ****************************************************************************************************
+## ROSLYN (CODE ANALYZER)
+## https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-messages
+## ****************************************************************************************************
+
+# IDE0005: Remove unnecessary using directives
+dotnet_diagnostic.IDE0005.severity = error
+
+# CA1804: Remove unused locals
+dotnet_diagnostic.CA1804.severity = error
+
+# CS0168: The variable 'var' is declared but never used
+dotnet_diagnostic.CS0168.severity = error
+
+# CS0169: The private field class member is never used
+dotnet_diagnostic.CS0169.severity = error
+
+# CS0219: The variable 'variable' is assigned but its value is never used
+dotnet_diagnostic.CS0219.severity = error
